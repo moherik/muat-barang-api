@@ -11,10 +11,10 @@ const PORT = process.env.PORT || 4000;
 
 const startServer = async () => {
   await connectDB()
-    .then(() => debug("connection establisherd"))
-    .catch((err) => error("error connecting to database: " + err));
+    .then(() => debug("🤝 Connection establisherd!"))
+    .catch((err) => error("🤕 Error connecting to database: " + err));
 
-  app.listen(PORT, () => debug(`server running on port ${PORT}`));
+  app.listen(PORT, () => debug(`🚀 Server running on port ${PORT}`));
 };
 
 startServer();

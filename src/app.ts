@@ -12,7 +12,11 @@ app.use(cors());
 app.use(bodyParser.json());
 
 app.get("/", (_req: Request, res: Response) => {
-  res.send("muat barang api");
+  res.send("welcome to muat barang 😋");
+});
+
+app.get("/api", (_req: Request, res: Response) => {
+  res.send("muat barang api 🚀");
 });
 
 app.use("/api/v1", apiRouter);

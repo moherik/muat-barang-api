@@ -1,5 +1,5 @@
 import express, { Request, Response } from "express";
-import { CreateUserRequest } from "../../types/user";
+import { CreateUserRequest } from "../../types/userTypes";
 import { UserService } from "../../services/user.service";
 
 const userRouter = express.Router();
@@ -12,7 +12,7 @@ userRouter.get("/", async (_req: Request, res: Response) => {
 
 userRouter.get("/:id", async (req: Request, res: Response) => {
   const id = req.params.id;
-  const result = await userService.find(parseInt(id));
+  const result = await userService.findOne(parseInt(id));
   res.json(result);
 });
 
