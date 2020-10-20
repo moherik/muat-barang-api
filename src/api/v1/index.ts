@@ -1,9 +1,9 @@
-import express from 'express'
+import express from "express";
 
-import userRouter from "./user"
+import userRouter from "./user";
 
-const apiRouter = express.Router()
+const apiRouter = express.Router();
 
-apiRouter.use("/users", userRouter)
+apiRouter.use("/users", userRouter);
 
-export default apiRouter
+export default apiRouter;
