@@ -1,16 +1,20 @@
+import Debug from "debug"
+const debug = Debug("muat-barang")
+const error = Debug("app:error")
+
 require("dotenv").config()
 
 import app from "./app"
-import { dbConnect } from "./config/db"
+import { connectDB } from "./config/db"
 
 const PORT = process.env.PORT || 4000;
 
 const startServer = async () => {
-    await dbConnect()
-            .then(() => console.log("connection establisherd"))
-            .catch((err) => console.error("error connecting to database: ", err));
+    await connectDB()
+            .then(() => debug("connection establisherd"))
+            .catch((err) => error("error connecting to database: " + err));
     
-    app.listen(PORT, () => console.log(`server running on port ${PORT}`))
+    app.listen(PORT, () => debug(`server running on port ${PORT}`))
 }
 
 startServer()

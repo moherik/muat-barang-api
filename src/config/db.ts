@@ -1,7 +1,7 @@
 import path from "path";
 import {createConnection} from "typeorm"
 
-export const dbConnect = async () => {
+export const connectDB = async () => {
     await createConnection({
          type: "postgres",
          host: process.env.DB_HOST,
